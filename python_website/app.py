@@ -9,6 +9,5 @@ app.register_blueprint(views, url_prefix='/')
 
 
 if __name__== '__main__':
-    # Run app in port 8001
+    # Run app in port 8001  
     app.run(debug=True, port=8001)
- 

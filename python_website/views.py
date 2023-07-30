@@ -25,5 +25,3 @@ def profile():
     args = request.args
     name = args.get('name')
     return render_template('index.html', name=name)
- 
-# 14:12
