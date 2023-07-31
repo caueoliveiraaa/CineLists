@@ -1,4 +1,9 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint
+from flask import render_template
+from flask import request
+from flask import jsonify
+from flask import redirect
+from flask import url_for
 
 
 # Create a bluprint 
@@ -11,12 +16,10 @@ def home():
     return render_template('index.html', name='Robot')
 
 
-# Create another route for user names getting the user name after /
-# @views.route('/profile/<username>')
-# def profile(username):
-#     args = request.args
-#     name = args.get('name')
-#     return render_template('index.html', name=username)
+# Return json data
+@views.route('/json')
+def get_json():
+    return jsonify({'name': 'bot', 'version': 1.5})
 
 
 # Get username with ?name=user_name_here
@@ -25,3 +28,9 @@ def profile():
     args = request.args
     name = args.get('name')
     return render_template('index.html', name=name)
+
+
+# Return to home route
+@views.route('/go-to-home')
+def go_to_home():
+    return redirect(url_for('views.home'))
