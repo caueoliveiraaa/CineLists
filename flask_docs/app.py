@@ -38,8 +38,6 @@ path: like string but also accepts slashes
 uuid: accepts UUID strings"""
 
 
-
-
 if __name__ == '__main__':
     app.run(debug=True, port=8002)
     # run app on terminal: flask --app app run
