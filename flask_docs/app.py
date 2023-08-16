@@ -1,3 +1,4 @@
+from flask import request
 from flask import Flask
 from markupsafe import escape
 
@@ -28,6 +29,14 @@ def show_post(post_id):
 @app.route('/path/<path:subpath>')
 def show_subpath(subpath):
     return f'Subpath {escape(subpath)}'
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return 
+    else:
+        return 
 
 
 """Converter types:
