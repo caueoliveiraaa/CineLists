@@ -1,0 +1,18 @@
+body {
+    background-color: black;
+    color: aquamarine;
+}
+
+#loginTitle {
+    display: flex; /* property that enables it to control the alignment of its children */
+    justify-content: center; /* centers the child elements horizontally */
+    align-items: center; /* centers the child elements vertically */
+    margin-top: 25%;
+}
+
+#loginForm {
+    display: flex; /* property that enables it to control the alignment of its children */
+    justify-content: center; /* centers the child elements horizontally */
+    align-items: center; /* centers the child elements vertically */
+    margin-top: 5%;
+}

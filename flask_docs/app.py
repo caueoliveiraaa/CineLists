@@ -1,19 +1,19 @@
 from flask import request
 from flask import Flask
 from markupsafe import escape
+from flask import render_template
+from flask import url_for
+
 
 # Create flask app
 app = Flask(__name__)
 
-# Working with urls ("Uniform Resource Locator.")
+
+# Working with urls
+# ("Uniform Resource Locator.")
 @app.route('/')
 def hello_world():
     return '<p>Hello, World!</p>'
-
-
-@app.route('/<name>')
-def greet(name):
-    return f'Wellcome {escape(name)}'
 
 
 @app.route('/user/<username>')
@@ -21,22 +21,18 @@ def show_user_profile(username):
     return f'User {escape(username)}'
 
 
-@app.route('/post/<int:post_id>')
-def show_post(post_id):
-    return f'Post {post_id}'
+@app.route('/login_page', methods=['GET'])
+def login_page():
+    return render_template('login.html')
 
 
-@app.route('/path/<path:subpath>')
-def show_subpath(subpath):
-    return f'Subpath {escape(subpath)}'
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
+@app.route('/do_login', methods=['POST'])
+def do_login():
     if request.method == 'POST':
-        return 
-    else:
-        return 
+
+        # AUTHENTICATION
+
+        return render_template('index.html')
 
 
 """Converter types:
