@@ -4,10 +4,8 @@ from markupsafe import escape
 from flask import render_template
 from flask import url_for
 
-
 # Create flask app
 app = Flask(__name__)
-
 
 # Working with urls
 # ("Uniform Resource Locator.")
@@ -15,16 +13,13 @@ app = Flask(__name__)
 def hello_world():
     return '<p>Hello, World!</p>'
 
-
 @app.route('/user/<username>')
 def show_user_profile(username):
     return f'User {escape(username)}'
 
-
 @app.route('/login_page', methods=['GET'])
 def login_page():
     return render_template('login.html')
-
 
 @app.route('/do_login', methods=['POST'])
 def do_login():
@@ -33,7 +28,6 @@ def do_login():
         # AUTHENTICATION
 
         return render_template('index.html')
-
 
 """Converter types:
 string: (default) accepts any text without a slash
