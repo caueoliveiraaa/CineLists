@@ -1,0 +1,12 @@
+---
+services:
+  website:
+    image: website:latest
+    build:
+      dockerfile: ./website/Dockerfile
+      context: .
+      tags:
+        - website:latest
+    restart: on-failure
+    ports:
+      - 8000:8501
