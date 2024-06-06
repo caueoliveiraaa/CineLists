@@ -72,8 +72,18 @@ make logs
 ...
 ```
 
-## 2 - Open URLs in browsers to test APIs via Swagger 🖥️🛜
+## 2 - Open URL in browsers to test APIs via Swagger 🖥️🛜
 
-
+```
+http://localhost:8000/
+```
 
 ### Documentações relevantes para o projeto | Relevant documentarions for the project 🔎🌐
+
+- `fastapi`  -  https://fastapi.tiangolo.com/
+- `python`  -  https://docs.python.org/3/
+- `python`  -  https://docs.pydantic.dev/latest/
+- `docker and python`  -  https://docs.docker.com/language/python/containerize/
+- `json`  -  https://www.json.org/json-en.html
+- `pep8`  -  https://peps.python.org/pep-0008/
+- `unit testing`  -  https://support.smartbear.com/testcomplete/docs/testing-approaches/unit-testing.html
