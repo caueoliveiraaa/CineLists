@@ -1,4 +1,4 @@
-![screenshot](system-design-overview.jpg "Application")
+![screenshot](CineList.drawio.png "Application")
 
 # DOCUMENTATION 🔎🌍⬇ 
 
