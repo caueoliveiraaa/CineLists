@@ -1,12 +1,20 @@
-from fastapi import FastAPI
+"""
+This is the entrypoint of the website.
+This website displays and orgnizes movies and series.
+"""
+
+
 import uvicorn
+
+from fastapi import FastAPI
+
 
 app = FastAPI(title='Cine List', description='CRUD for movies')
   
 
 @app.get('/')
 def root():
-    return {"status": 200}
+    return { "status": 200 }
 
 
 if __name__ == '__main__':
