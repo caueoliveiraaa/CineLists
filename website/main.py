@@ -15,7 +15,7 @@ app = FastAPI(title='Cine List', description='CRUD for movies')
 def root() -> dict:
     return { "status": 200 }
 
-
+    
 def main() -> None:
     try:
         uvicorn.run(app, host='0.0.0.0', port=8000)
