@@ -7,32 +7,40 @@ This website displays and orgnizes movies and series.
 import uvicorn
 import json
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
-from fastapi.requests import Request
 from pathlib import Path
 
+
 app = FastAPI(title='Cine List', description='CRUD for movies')
-templates = Jinja2Templates(directory="templates") 
-  
-  
-def load_movies() -> dict:
-    json_file_path = Path(__file__).parent / 'database' / 'movies.json'
-    
-    with open(json_file_path) as file:
-        return json.load(file)
+templates = Jinja2Templates(directory="templates")
+
+
+def load_movies() -> list:
+    path = Path(__file__).parent / 'database' / 'movies.json'
+
+    with open(path) as file:
+        movies_data = json.load(file)
+
+    movies_list = [
+        {"index": index, **movie_data}
+        for index, movie_data in movies_data.items()
+    ]
+
+    return movies_list
 
 
 @app.get('/')
 def root() -> dict:
-    return { "status": 200 }
+    return {"status": 200}
 
 
 @app.get('/movies', response_class=HTMLResponse)
 def get_movies(request: Request):
     movies = load_movies()
-    return templates.TemplateResponse("movies.html", {"request": request, "movies": movies})
+    return templates.TemplateResponse(
+        "movies.html", {"request": request, "movies": movies})
 
 
 def main() -> None:
