@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
     <style>
+        .container {
+            display: flex;
+        }
+
         .sidebar {
             height: 100%;
             width: 160px;
@@ -14,11 +17,25 @@
             margin-right: 15%;
             background-color: rgb(212, 65, 65);
             width: 10%;
+            text-align: center;
         }
+    
+        .sidebar a {
+            padding-top: 50px;
+            color: black;
+            font-style: normal;
+            text-decoration: none;
+        }
+    
+        .sidebar a:hover {
+            background-color: white;
+        }
+    
         .main {
             margin-left: 160px; 
             padding: 0px 10px;
         }
+    
         .card {
             border-style: outset;
             border-radius: 5%;
@@ -26,35 +43,38 @@
             border-color: black;
         }
     </style>
+    <title>Movies</title>
 </head>
 <body>
-    <div class="sidebar">
-        <h1>Movies</h1>
-    </div>
-    <div class="main">
-        <h1>Movie list</h1>
-        <ul>
-            {% for movie in movies %}
-            <div class="card">
-                <img src="{{ movie.poster }}" alt="Movie Poster" width="140" height="209">
-                {{ movie.title }}
-            </div>
-            <!-- <li>
-                <p><strong>Index:</strong> {{ movie.index }}</p>
-                <img src="{{ movie.poster }}" alt="Movie Poster" width="140" height="209">
-                <p><strong>Title:</strong> {{ movie.title }}</p>
-                <p><strong>Year:</strong> {{ movie.year }}</p>
-                <p><strong>Director:</strong> {{ movie.director }}</p>
-                <p><strong>Genre:</strong> {{ movie.genre }}</p>
-                <p><strong>Rating:</strong> {{ movie.rating }}</p>
-                <p><strong>Metascore:</strong> {{ movie.metascore }}</p>
-                <p><strong>Description:</strong> {{ movie.description }}</p>
-                <p><strong>Cast:</strong> {{ movie.cast }}</p>
-                <p><strong>Votes:</strong> {{ movie.votes }}</p>
-                <p><strong>Review:</strong> {{ movie.review }}</p>
-            </li> -->
-            {% endfor %}
-        </ul>
+    <div class="container">
+        <div class="sidebar">
+            <a href="/">Home</a>
+        </div>
+        <div class="main">
+            <h1>Movie list</h1>
+            <ul>
+                {% for movie in movies %}
+                <div class="card">
+                    <img src="{{ movie.poster }}" alt="Movie Poster" width="140" height="209">
+                    {{ movie.title }}
+                </div>
+                <!-- <li>
+                    <p><strong>Index:</strong> {{ movie.index }}</p>
+                    <img src="{{ movie.poster }}" alt="Movie Poster" width="140" height="209">
+                    <p><strong>Title:</strong> {{ movie.title }}</p>
+                    <p><strong>Year:</strong> {{ movie.year }}</p>
+                    <p><strong>Director:</strong> {{ movie.director }}</p>
+                    <p><strong>Genre:</strong> {{ movie.genre }}</p>
+                    <p><strong>Rating:</strong> {{ movie.rating }}</p>
+                    <p><strong>Metascore:</strong> {{ movie.metascore }}</p>
+                    <p><strong>Description:</strong> {{ movie.description }}</p>
+                    <p><strong>Cast:</strong> {{ movie.cast }}</p>
+                    <p><strong>Votes:</strong> {{ movie.votes }}</p>
+                    <p><strong>Review:</strong> {{ movie.review }}</p>
+                </li> -->
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </body>
 </html>
