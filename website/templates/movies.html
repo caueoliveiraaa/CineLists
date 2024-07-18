@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         .container {
-            display: flex;
+            display: flex;            
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
         }
 
         .sidebar {
@@ -21,14 +25,13 @@
         }
     
         .sidebar a {
-            padding-top: 50px;
+            margin-top: 10px;
             color: black;
-            font-style: normal;
             text-decoration: none;
         }
     
         .sidebar a:hover {
-            background-color: white;
+            color: white;
         }
     
         .main {
@@ -41,6 +44,7 @@
             border-radius: 5%;
             border: 2px;
             border-color: black;
+            width: 5%;
         }
     </style>
     <title>Movies</title>
@@ -51,7 +55,6 @@
             <a href="/">Home</a>
         </div>
         <div class="main">
-            <h1>Movie list</h1>
             <ul>
                 {% for movie in movies %}
                 <div class="card">
